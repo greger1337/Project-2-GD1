@@ -528,6 +528,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1165574241859395101, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1209698790873742501}
+    - targetCorrespondingSourceObject: {fileID: 1165574241859395101, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1209698790873742505}
   m_SourcePrefab: {fileID: 100100000, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
 --- !u!1 &1209698790873742500 stripped
 GameObject:
@@ -549,7 +552,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -607,6 +610,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1209698790873742505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209698790873742500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377a2d728cc3a7d44b577044f6440269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 5
 --- !u!1001 &6551715238627735331
 PrefabInstance:
   m_ObjectHideFlags: 0
