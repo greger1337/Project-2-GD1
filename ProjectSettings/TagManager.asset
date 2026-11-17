@@ -15,6 +15,7 @@ TagManager:
   - Bottom_Right
   - Bottom_Left
   - Center
+  - Enemy
   layers:
   - Default
   - TransparentFX
