@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Boarder
   - Wall
+  - Bottom
+  - Right
+  - Top
+  - Left
+  - Top_Right
+  - Top_Left
+  - Bottom_Right
+  - Bottom_Left
+  - Center
   layers:
   - Default
   - TransparentFX
