@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnemyChase : MonoBehaviour
 {
@@ -23,15 +22,13 @@ public class EnemyChase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Enemy touched: " + other.name);
-
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PLAYER CAUGHT!");
-
             hasCaughtPlayer = true;
 
-            SceneManager.LoadScene("LooseScreen");
+            Debug.Log("PLAYER CAUGHT!");
+
+            GameManager.Instance.LoseGame();
         }
     }
 }
