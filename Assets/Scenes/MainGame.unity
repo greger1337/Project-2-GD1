@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3842059a98f85cc408f65280c5be6497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyChase
-  moveSpeed: 5
+  moveSpeed: 5.2
   player: {fileID: 226750773}
 --- !u!58 &1696244301
 CircleCollider2D:
