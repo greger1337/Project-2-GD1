@@ -25,20 +25,36 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
     {
+        // Only initialize gameplay in MainGame
+        if (SceneManager.GetActiveScene().name != "MainGame")
+            return;
+
         score = 0;
         childrenSaved = 0;
         timeRemaining = timeLimit;
+        gameEnded = false;
 
         UpdateUI();
     }
 
     void Update()
     {
+        // Timer only works during gameplay
+        if (SceneManager.GetActiveScene().name != "MainGame")
+            return;
+
         if (gameEnded)
             return;
 
@@ -61,6 +77,9 @@ public class GameManager : MonoBehaviour
         if (gameEnded)
             return;
 
+        if (SceneManager.GetActiveScene().name != "MainGame")
+            return;
+
         childrenSaved++;
 
         score += pointsPerChild;
@@ -73,6 +92,7 @@ public class GameManager : MonoBehaviour
         if (childrenSaved >= childrenNeeded)
         {
             WinGame();
+            return;
         }
     }
 
@@ -98,21 +118,32 @@ public class GameManager : MonoBehaviour
 
         gameEnded = true;
 
+        // Hide timer
+        if (timerText != null)
+            timerText.gameObject.SetActive(false);
+
         PlayerPrefs.SetInt("FinalScore", score);
         PlayerPrefs.SetInt("ChildrenSaved", childrenSaved);
         PlayerPrefs.SetString("GameResult", "WIN");
 
         PlayerPrefs.Save();
 
+        Debug.Log("PLAYER WON!");
+
         SceneManager.LoadScene("WinScreen");
     }
 
+    // Losing condition
     public void LoseGame()
     {
         if (gameEnded)
             return;
 
         gameEnded = true;
+
+        // Hide timer
+        if (timerText != null)
+            timerText.gameObject.SetActive(false);
 
         score = -999;
 
@@ -122,6 +153,8 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.Save();
 
+        Debug.Log("PLAYER LOST!");
+
         SceneManager.LoadScene("LooseScreen");
     }
 
@@ -129,20 +162,19 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         PlayerPrefs.DeleteKey("FinalScore");
+        PlayerPrefs.DeleteKey("ChildrenSaved");
         PlayerPrefs.DeleteKey("GameResult");
 
         SceneManager.LoadScene("MainGame");
     }
 
+    // Start a new game
     public void StartGame()
     {
-        // Reset saved game data
         PlayerPrefs.DeleteKey("FinalScore");
         PlayerPrefs.DeleteKey("ChildrenSaved");
         PlayerPrefs.DeleteKey("GameResult");
 
-        // Load gameplay scene
         SceneManager.LoadScene("MainGame");
     }
-
 }

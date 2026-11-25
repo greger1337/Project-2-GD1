@@ -23,7 +23,7 @@ public class ResultScreenUI : MonoBehaviour
 
         if (result == "WIN")
         {
-            resultText.text = "YOU SAVED ALL THE CHILDREN!";
+            resultText.text = "You Won";
         }
         else
         {
