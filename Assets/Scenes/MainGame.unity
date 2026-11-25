@@ -162,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.77, y: 1.01}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -215,6 +215,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2953845155494515100, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
   m_PrefabInstance: {fileID: 1043505503}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &226750775
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226750766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0965b69bd7d5e514682daaca51edfc1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &250223290 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5034836288860326849, guid: 716114261be61f3458af24ab620f6e58, type: 3}
@@ -596,6 +618,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4144943260263077364, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1934923447854815654, guid: 12f3da6ecc5365e49b0aa7876cf9291a, type: 3}
+    - target: {fileID: 4144943260263077364, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
       propertyPath: m_Color.b
       value: 0.07363957
       objectReference: {fileID: 0}
@@ -620,6 +646,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1165574241859395101, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 226750769}
+    - targetCorrespondingSourceObject: {fileID: 1165574241859395101, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 226750775}
   m_SourcePrefab: {fileID: 100100000, guid: c1fc63d8481c52944a772d36cb3afaaf, type: 3}
 --- !u!224 &1335634156 stripped
 RectTransform:
